@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/', paginaInicio);
 
-router.get('/productos/:slug',paginaDetalleProducto);
+router.get('/producto/:slug',paginaDetalleProducto);
 
 
 export default router;

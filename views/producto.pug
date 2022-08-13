@@ -8,7 +8,22 @@ block contenido
                 .precios
                     input.cantidad(type='number')
                     input(type="button", value="Añadir al carrito", class="añadir" )
+                    h3 ES UN MEDICAMENTO. NO EXCEDER SU CONSUMO. LEER INDICACIONES Y CONTRAINDICACIONES. SI LOS SÍNTOMAS PERSISTEN, CONSULTAR AL MÉDICO. 
+                    span Caja Con 6 Sobres Vía de administración: Oral
             .product-image
-                img(src=`img/${resultado.imagen}`)
+                img(src=`/img/${resultado.imagen}`)
+        each productos in resultado1        
+            #container-mini
+                .product-image-mini
+                    a(href=`producto/${productos.slug}`) 
+                    img(src=`/img/${productos.imagen}`) 
+                .product-details-mini
+                    h1= productos.nombre
+                    h2= productos.precio
+                    .precios
+                        input.cantidad(type='number')
+                        input(type="button", value="Añadir al carrito", class="añadir" )
+                       
+              
 
   

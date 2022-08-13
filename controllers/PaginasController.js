@@ -1,4 +1,5 @@
 import { Producto } from '../models/Product.js';
+import { Op } from 'sequelize';
 
 const paginaInicio = async(req, res)=>{
     
@@ -18,14 +19,17 @@ const paginaDetalleProducto = async(req,res) => {
             
     try {
         
-        const resultado = await slug.fidOne({where : {slug: slug}})
+        const resultado = await Producto.findOne({ where : { slug: slug}});
+        const resultado1 = await Producto.findAll({ where: { slug: {[Op.not]: slug}}});
 
-        res.render('producto', {
-            resultado
+        res.render('producto',{
+            resultado,
+            resultado1
         })
 
+        console.log(resultado);
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 }
 
