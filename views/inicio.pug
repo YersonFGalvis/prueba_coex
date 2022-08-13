@@ -1,0 +1,19 @@
+extends ./layout/index
+
+block contenido
+    .imagen-pildoras 
+        img(src="img/pildoras1.jpg", alt="")
+    each productos in producto        
+        #container
+            .product-details
+                h1= productos.nombre
+                h2= productos.precio
+                .precios
+                    input.cantidad(type='number')
+                    input(type="button", value="Añadir al carrito", class="añadir" )
+            .product-image
+               a(href=`producto/${productos.slug}`) 
+                img(src=`img/${productos.imagen}`)
+
+  
+

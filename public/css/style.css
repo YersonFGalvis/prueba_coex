@@ -1,0 +1,80 @@
+*{
+    margin: 0%;
+}
+
+
+.imagen-pildoras img{
+    width: 100%;
+    height: 250px;
+}
+
+header {
+	background-color: #009245;
+}
+
+header .logo-contenedor {
+	margin-left: 100px;
+    padding: 10px;
+}
+
+header .menu-contenedor {
+	display: flex;
+	flex-direction: row;
+}
+
+header .menu{
+    display: flex;
+    align-items:center;
+    padding-left: 800px;
+}
+
+header .menu a{
+    padding: 25px;
+}
+
+#container {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(102, 102, 102, 1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(102, 102, 102, 1);
+    box-shadow: 10px 10px 5px 0px rgba(181, 181, 181, 1);
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    border-radius: 5px;
+    margin: 5em auto;
+    height: 350px;
+    width: 700px;
+  }
+  
+  .product-image {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 45%;
+    display: inline-block;
+  }
+  
+  .product-details {
+    position: relative;
+    text-align: left;
+    padding: 30px;
+    height: 100%;
+    float: right;
+    width: 40%;
+  }
+  
+  #container img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .precios {
+    padding-top: 10px;
+  }
+  
+  .añadir {
+   border-radius: 5px;
+   padding: 10px;
+   background-color: #009245;
+   color: white;
+   border: none;
+  }
+ 

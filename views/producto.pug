@@ -1,0 +1,14 @@
+extends ./layout/index
+
+block contenido        
+        #container
+            .product-details
+                h1= resultado.nombre
+                h2= resultado.precio
+                .precios
+                    input.cantidad(type='number')
+                    input(type="button", value="Añadir al carrito", class="añadir" )
+            .product-image
+                img(src=`img/${resultado.imagen}`)
+
+  
