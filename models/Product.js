@@ -14,6 +14,9 @@ stock:{
 imagen:{
     type: sequelize.STRING
 },
+iva:{
+    type: sequelize.STRING
+},
 slug:{
     type: sequelize.STRING
 },

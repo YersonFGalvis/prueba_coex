@@ -1,29 +1,50 @@
-extends ./layout/index
+extends ./layout/product
 
-block contenido        
-        #container
-            .product-details
-                h1= resultado.nombre
-                h2= resultado.precio
-                .precios
-                    input.cantidad(type='number')
-                    input(type="button", value="Añadir al carrito", class="añadir" )
-                    h3 ES UN MEDICAMENTO. NO EXCEDER SU CONSUMO. LEER INDICACIONES Y CONTRAINDICACIONES. SI LOS SÍNTOMAS PERSISTEN, CONSULTAR AL MÉDICO. 
-                    span Caja Con 6 Sobres Vía de administración: Oral
-            .product-image
-                img(src=`/img/${resultado.imagen}`)
-        each productos in resultado1        
-            #container-mini
-                .product-image-mini
-                    a(href=`producto/${productos.slug}`) 
-                    img(src=`/img/${productos.imagen}`) 
-                .product-details-mini
-                    h1= productos.nombre
-                    h2= productos.precio
-                    .precios
-                        input.cantidad(type='number')
-                        input(type="button", value="Añadir al carrito", class="añadir" )
-                       
-              
+block contenido 
+        .container-fluid
+            .container.text-center.mt-5
+                .row.justify-content-center
+                    .col
+                        .card.mb-3(style='max-width:100%')
+                            a(href='#')
+                                img.img-fluid.rounded-start(src=`/img/${resultado.imagen}`)
+                            br
+                            br                   
+                            br   
+                            br                
+                    .col
+                        .card.mb-3(style='max-width:100%')
+                            .card-body.justify-content-start
+                                h2.card-title.text-start= resultado.nombre
+                                 br
+                                .row.justify-content-between.mb-5
+                                    .col-4
+                                         h4.card-title.text-start= resultado.precio
+                                    .col-4
+                                        button.btn.btn-success(type='button') Comprar ahora
+                                .row.justify-content-between.mb-5
+                                    .col-6
+                                        input.form-control(type='number' placeholder='Cantidad de productos')
+                                    .col-4
+                                        button.btn.btn-success(type='button') Añadir al carrito
+                                h5.card-title.text-start ES UN MEDICAMENTO. NO EXCEDER SU CONSUMO. LEER INDICACIONES Y CONTRAINDICACIONES. SI LOS SINTOMAS PERSISTEN, CONSULTAR AL MEDICO.
+                                span.card-title.text-start Caja Con 6 Sobres
+                                br
+                                span.card-title.text-start Via de administracion: Oral
+        .container-fluid                
+            .container.text-center
+                .row.justify-content-center
+                    each productos in resultado1 
+                        .col
+                            .container(style='max-width:500px')
+                                .card.mb-3
+                                    a(href=`/producto/${productos.slug}`)
+                                        img.img-fluid.rounded-start(src=`/img/${productos.imagen}`)
+                                    .card-body.justify-content-center
+                                        h6.card-title= productos.nombre
+                                        h3.card-title.text-start= productos.precio
+                                        button.btn.btn-success(type='button') Añadir al carrito
 
-  
+
+
+                      

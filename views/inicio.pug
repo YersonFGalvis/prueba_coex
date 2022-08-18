@@ -1,19 +1,20 @@
 extends ./layout/index
 
 block contenido
-    .imagen-pildoras 
-        img(src="img/pildoras1.jpg", alt="")
-    each productos in producto        
-        #container
-            .product-details
-                h1= productos.nombre
-                h2= productos.precio
-                .precios
-                    input.cantidad(type='number')
-                    input(type="button", value="Añadir al carrito", class="añadir" )
-            .product-image
-               a(href=`producto/${productos.slug}`) 
-                img(src=`img/${productos.imagen}`)
-
-  
-
+        .container.text-center.mt-4 
+            .row.justify-content-center
+                each productos in producto     
+                    .card.mb-3(style='max-width: 800px')
+                        .row.g-0
+                            .col-md-4
+                                a(href=`producto/${productos.slug}`) 
+                                    img.img-fluid.rounded-start(src=`img/${productos.imagen}`)
+                            .col-md-8
+                                .card-body.justify-content-start
+                                    h2.card-title.nombreProducto= productos.nombre
+                                    h4.card-title.text-start.precioProducto= productos.precio
+                                    .input-group.mb-3
+                                        input.form-control(type='number' placeholder='Cantidad de productos')
+                                        button.btn.btn-success(type='button' class=`carrito${productos.id}`) Añadir al carrito
+                                        a(href="#")  
+                                    
